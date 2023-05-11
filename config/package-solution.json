@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "zelar-employee-dir-client-side-solution",
+    "id": "2574cf06-1b25-4c47-9bc8-20b9c776278c",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.16.1"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "zelar-employee-dir description"
+      },
+      "longDescription": {
+        "default": "zelar-employee-dir description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "zelar-employee-dir Feature",
+        "description": "The feature that activates elements of the zelar-employee-dir solution.",
+        "id": "3c6b3e5b-3438-47a3-b2a9-93a5ff0b2c72",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/zelar-employee-dir.sppkg"
+  }
+}

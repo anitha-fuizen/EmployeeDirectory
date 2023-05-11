@@ -1,0 +1,30 @@
+@import '~@fluentui/react/dist/sass/References.scss';
+
+.indexNavigation {
+  margin-bottom: 1em;
+   width:500px;
+   border: 3px solid lightcoral;
+   div[role^='tablist'] {
+    white-space: normal;
+
+    button:last-child {
+      font-weight: 600;
+      padding:5px;
+    }
+  }
+  .link-128{
+    padding: 5px;
+    margin: 0px;
+  }
+	[class^='ms-SearchBox'] {
+    background-color: rgba(255, 228, 196, 0.281);
+   
+		//max-width: 100%;
+	}
+  .button{
+    padding: 5px;
+  }
+  .pivotstyle{
+    padding:5px
+  }
+}

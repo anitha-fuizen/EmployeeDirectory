@@ -1,0 +1,75 @@
+@import '~@fluentui/react/dist/sass/References.scss';
+
+$neutralLight: "[theme:darkblue, default: #eaeaea]";
+
+.calloutCard{
+  padding:5px;
+  
+h2{
+    border-bottom: 2px solid $neutralLight;
+    margin-top:10px;
+    
+    
+  }
+}
+.PeopleCallout{
+  list-style: none;
+  margin:10px;
+  padding:3px;
+  margin-left:0px;
+  
+  // max-width:30px;
+  // padding-left: 0;
+  
+  // .info{
+  //   padding: .5rem 0;
+  // }
+  li{
+   display: flex;
+    flex-direction: column;
+    margin:2px;
+    
+    a{
+      outline: none;
+      display: block;
+       padding-right: 1rem;
+      width: 100%;
+      color:black;
+      &:hover{
+        + .clipboard{
+          opacity: 1;
+          // transform: translateX(1rem);
+          transition: .3s opacity cubic-bezier(0.165, 0.84, 0.44, 1), .3s transform cubic-bezier(0.165, 0.84, 0.44, 1);
+          will-change: opacity, transform;
+        }
+      }
+    }
+    i{
+      display: inline-flex;
+      cursor: pointer;
+      margin-right: 2rem;
+      position: relative;
+      &.clipboard{
+        // border: 1px solid "[theme:themePrimary, default: #0078d7]";
+       
+        border-radius: 100%;
+        cursor: pointer;
+       
+        padding: .75rem;
+        position: absolute;
+       
+        transform: translateX(0);
+        transition: .3s opacity cubic-bezier(0.165, 0.84, 0.44, 1), .3s transform cubic-bezier(0.165, 0.84, 0.44, 1);
+       
+        will-change: opacity, transform;
+        &:hover{
+          opacity: 1;
+          transform: translateX(1rem);
+          transition: .3s opacity cubic-bezier(0.165, 0.84, 0.44, 1), .3s transform cubic-bezier(0.165, 0.84, 0.44, 1);
+          will-change: opacity, transform;
+        }
+      }
+    }
+  }
+}
+
