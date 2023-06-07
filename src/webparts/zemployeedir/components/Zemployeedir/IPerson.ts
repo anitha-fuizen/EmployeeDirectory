@@ -14,7 +14,7 @@ export interface IPerson {
     // givenName: string;
     // surname: string;
     // empFullName: string;
-     jobTitle: string;
+    //  jobTitle: string;
     // userPrincipleName: string;
   
   

@@ -178,7 +178,7 @@ div.ms-FocusZone.css-46.ms-Pivot.root-120{
   position: relative;
   //font-family: "Segoe UI", "Segoe UI Web (West European)", "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 400;
   box-sizing: border-box;
   border: 0px;
@@ -186,7 +186,7 @@ div.ms-FocusZone.css-46.ms-Pivot.root-120{
   text-decoration: none;
   text-align: center;
   cursor: pointer;
-  padding: 0px 6.5px;
+  padding: 0px 5px;
   border-radius: 0px;
   height: 44px;
   color: rgb(50, 49, 48);
@@ -196,9 +196,20 @@ div.ms-FocusZone.css-46.ms-Pivot.root-120{
   user-select: none;
 }
 .linkIsSelected-127:hover{
-  background-color:rgb(98, 97, 97);
+  background-color:rgb(72, 71, 71);
 }
 .searchbar{
-  margin-left:400px;
+  margin-left:65%;
   margin-top:10px;
 }
+.persona_card{
+  border: 1px solid rgb(214, 213, 213);
+  //box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  box-shadow:  rgba(0, 0, 0, 0.23) 0px 0px 5px 2px;
+   transition: all 0.5s;
+    cursor: pointer;
+    padding:5px 0px;
+}
+// .root-217{
+//   height:79px;
+// }

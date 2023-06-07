@@ -19,7 +19,9 @@ export class Search extends React.Component<ISearchProps, {}> {
       <div>
       <div className='search'>
         <SearchBox 
+        
           placeholder={strings.SearchBoxPlaceholder}
+          onChange={(_, newValue) =>this._handleSearch }
           onSearch={this._handleSearch}
           onClear={this._handleClear}
           value={this.props.searchQuery}

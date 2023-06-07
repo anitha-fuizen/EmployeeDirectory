@@ -1,77 +1,10 @@
 @import '~@fluentui/react/dist/sass/References.scss';
 
-// .applygrid{
-
-//        border-radius: 20px solid black;
-//     // display:flex;
-//     // flex-wrap: wrap;
-//     display: grid;
-//     border: 2px solid black;
-//     grid-template-columns: repeat(auto auto auto );
-//     //border:1px transparent;
-//     padding:10px;
-//     margin-right: -6px;
-//   // grid-template-columns: auto auto auto;
-//    row-gap: 30px;
-//   // border-radius: 2px solid black;
-//     background-color: white;
-// }
-// .persona_card{
-//     align-items: center;
-//     border: 1px transparent rgb(178, 178, 32);
-//     display: flex;
-//     justify-content: space-between;
-//     padding: 12px;
-//     padding-right: 6px;
-//    position: relative;
-//     height: 50px;
-//     .persona{
-//       align-items: center;
-//       // display: inline-flex;
-//       height: 200px;
-//       justify-content: center;
-//       // position: absolute;
-//       right: 1rem;
-//       width: 100px;
-//       i{
-//         color: "[theme:themeSecondary, default: #2b88d8]";
-//         cursor: pointer;
-//         font-size: 1.4rem;
-//         border: 0px transparent;
-//       }
-//     }
-//     .callout {
-//       display: block;
-      
-//     }
-//     .calloutShow {
-//       display: block;
-//     }
-  
-//   }
-
-
-.persona_card{
- // box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  border:1px solid rgba(254, 245, 245, 0.393);
-  box-shadow: rgba(50, 50, 50, 0.20) 0px 54px 55px, rgba(71, 70, 70, 0.11) 0px -12px 30px, rgba(70, 69, 69, 0.11) 0px 4px 6px, rgba(92, 92, 92, 0.15) 0px 12px 13px, rgba(91, 90, 90, 0.08) 0px -3px 5px;
- 
-  // display: grid;
-  // grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  // grid-gap: 20px;
-  // align-items: stretch;
-  
-  // width:auto;
-  // text-align: center;
-  // display: grid;
-  // grid-template-columns: repeat(3, 1fr);
-  // grid-auto-rows: auto;
-  // grid-gap: 1rem;
- }
 .applygrid{
   
   display: grid;
-  grid-template-columns: repeat(3, minmax(200px, 1fr));
+  // grid-template-columns: repeat(4, minmax(200px, 1fr));
+  grid-template-columns:24% 24% 24% 24%;
   grid-gap:10px;
   align-items: stretch;
   font-family: Arial, Helvetica, sans-serif;
@@ -79,6 +12,8 @@
   font-weight: bold;
   // background-color:white;
   margin-top:10px;
+  padding: 0 5px;
+  overflow: auto;
   
 }
 .root-139 {
@@ -96,4 +31,13 @@
   min-width: 52px;
   display: flex;
   align-items: center;
+  
+   
+}
+
+.peopleDirectory{
+  background-color: white;
+}
+.row{
+  width: 100%;
 }

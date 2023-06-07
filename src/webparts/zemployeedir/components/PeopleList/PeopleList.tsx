@@ -4,8 +4,6 @@ import {
   Persona,
   PersonaSize
 } from '@fluentui/react/lib/Persona';
-
-
 import * as strings from 'ZemployeedirWebPartStrings';
 //import styles from './PeopleList.module.scss';
 import './NewPeopleList.scss'
@@ -13,13 +11,8 @@ import { Callout, DirectionalHint } from '@fluentui/react/lib/Callout';
 import { IPeopleListState } from './IPeopleListState';
 import { PeopleCallout } from '../PeopleCallout';
 import { IPerson } from '../Zemployeedir';
-//import { PeopleDirectory } from '../PeopleDirectory';
-// import { Pagination } from "@pnp/spfx-controls-react/lib/pagination";
-// export interface IPnPPaginationState {
-//   allItems: ISPItem[];
-//   paginatedItems: ISPItem[];
-// }
-const pageSize: number = 6;
+//import { Pagination } from '@pnp/spfx-controls-react';
+const pageSize: number = 8;
 export class PeopleList extends React.Component<IPeopleListProps, IPeopleListState> {
   //[x: string]: any;
   constructor(props: IPeopleListProps) {
@@ -45,11 +38,24 @@ export class PeopleList extends React.Component<IPeopleListProps, IPeopleListSta
   public _getPage(page: number):void {
     // round a number up to the next largest integer.
     const roundupPage = Math.ceil(page);
-    console.log(page, roundupPage);
+    console.log(page, roundupPage,pageSize,this.props.people);
     this.setState({
       paginatedItems: this.props.people.slice((roundupPage-1) * pageSize, (roundupPage * pageSize) )
     });
-    console.log(this.state.paginatedItems)
+    console.log(this.props.people)
+    let arr=this.props.people
+    function compare( a:any, b:any ) {
+      if ( a.name < b.name ){
+        return -1;
+      }
+      if ( a.name > b.name ){
+        return 1;
+      }
+      return 0;
+    }
+    let sortedarr = arr.sort(compare)
+    console.log(sortedarr);
+    
   }
 
   public render(): React.ReactElement<IPeopleListProps> {
@@ -78,19 +84,19 @@ export class PeopleList extends React.Component<IPeopleListProps, IPeopleListSta
               {/* // for each retrieved person, create a persona card with the retrieved
               // information */}
               
-              {this.state.paginatedItems.map((p:IPerson, i: number) => {
+              {this.props.people.map((p:IPerson, i: number) => {
                 //const phone: string = p.phone && p.mobile ? `${p.phone}/${p.mobile}` : p.phone ? p.phone : p.mobile;
                 // const toggleClassName: string = this.state.toggleClass ? `ms-Icon--ChromeClose ${styles.isClose}` : "ms-Icon--ContactInfo";
                 return (
                    
                   <div key={i} className="persona_card" >
-                 {console.log(p.photoUrl)}
+                 {/* {console.log(p.photoUrl)} */}
                     <Persona onClick={this._onPersonaClicked(i, p)} 
                     text={p.name} secondaryText={p.email} 
                     tertiaryText={p.mobile}
                      imageUrl={'/_layouts/15/userphoto.aspx?size=S&accountname=' + p.email} 
                     imageAlt={p.name} size={PersonaSize.size72}
-                    styles={{ primaryText: { fontSize: '13px',margin:'2px',fontWeight:500}, root: { margin: '1px' },secondaryText:{fontSize:'10.5px',margin:'2px'},tertiaryText:{fontSize:'12px',margin:'2px'} }
+                    styles={{ primaryText: { fontSize: '15px',margin:'2px',fontWeight:500}, root: { margin: '1px' },secondaryText:{fontSize:'11.5px',margin:'2px'},tertiaryText:{fontSize:'12.5px',margin:'2px'} }
                              
                   }
                      />
@@ -118,12 +124,13 @@ export class PeopleList extends React.Component<IPeopleListProps, IPeopleListSta
               })
             }             
   </div>
-       {/* <Pagination
+        {/* <Pagination
               currentPage={1}
               totalPages={Math.ceil((this.props.people.length / pageSize))}
-              onChange={(page) => this._getPage(page)}
+              onChange={(page:number) => this._getPage(page)}
+            
               limiter={2}
-            />  */}
+            />   */}
   </div>
             }
         </div>

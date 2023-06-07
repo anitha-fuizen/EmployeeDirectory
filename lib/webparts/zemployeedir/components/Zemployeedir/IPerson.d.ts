@@ -6,7 +6,6 @@ export interface IPerson {
     function: string;
     department: string;
     DOJ: Date;
-    jobTitle: string;
 }
 export interface IPerson1 {
     givenName: string;

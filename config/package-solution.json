@@ -3,7 +3,7 @@
   "solution": {
     "name": "zelar-employee-dir-client-side-solution",
     "id": "2574cf06-1b25-4c47-9bc8-20b9c776278c",
-    "version": "1.0.0.0",
+    "version": "1.0.0.4",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
     "isDomainIsolated": false,

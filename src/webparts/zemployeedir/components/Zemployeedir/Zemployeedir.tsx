@@ -113,11 +113,11 @@ export class Zemployeedir extends React.Component<IZemployeedirProps, IZemployee
       { 
        console.log(index,searchQuery);
       // requiredUrl="/_api/web/lists/getbytitle('EmpDirectory')/Items?$select=firstName,LastName,PreferredName,WorkEmail,PictureURL,PhoneNumber,MobileNumber,JobTitle,Department,Skills,PastProjects";
-       requiredUrl="/_api/web/lists/getbytitle('EmployeeDetails')/Items?$select=Name/FirstName,Name/LastName,Name/EMail,Name/Department,MobileNumber,JobTitle,DateofJoining&$expand=Name";
+       requiredUrl="/_api/web/lists/getbytitle('EmployeeDetails')/Items?$select=EmpName/FirstName,EmpName/LastName,EmpName/EMail,EmpName/Department,Contactno,DateofJoining,JobTitle&$expand=EmpName";
       }
    else  {
     
-   requiredUrl="/_api/web/lists/getbytitle('EmployeeDetails')/Items?$select=Name/FirstName,Name/LastName,Name/EMail,Name/Department,MobileNumber,JobTitle,DateofJoining&$expand=Name&$filter=startswith(Name/FirstName,'"+query+"')";
+   requiredUrl="/_api/web/lists/getbytitle('EmployeeDetails')/Items?$select=EmpName/FirstName,EmpName/LastName,EmpName/EMail,EmpName/Department,Contactno,DateofJoining,JobTitle&$expand=EmpName&$filter=startswith(EmpName/FirstName,'"+query+"')";
    } 
 console.log(this.props.webUrl+ requiredUrl)
       this.props.spHttpClient 
@@ -157,11 +157,11 @@ console.log(this.props.webUrl+ requiredUrl)
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const people: IPerson[] = res.value?.map((x:any) => {
           return {
-            name:x.Name.FirstName+x.Name.LastName,
-            mobile:x.MobileNumber,
-            email: x.Name.EMail,
+            name:x.EmpName.FirstName+' '+x.EmpName.LastName,
+            mobile:x.Contactno,
+            email: x.EmpName.EMail,
             function: x.JobTitle,
-            department: x.Name.Department,
+            department:x.EmpName.Department,
             DOJ:x.DateofJoining
           
           
@@ -227,7 +227,9 @@ console.log(this.state.searchQuery);
   public componentDidMount(): void {
     // load information about people after the component has been
     // initiated on the page
+    console.log(this.state.selectedIndex);
     this._loadPeopleInfo(this.state.selectedIndex, null);
+    console.log(this.state.people);
   }
 
   public render(): React.ReactElement<IZemployeedirProps> {

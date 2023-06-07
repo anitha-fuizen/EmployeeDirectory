@@ -2922,13 +2922,8 @@ var __extends = (undefined && undefined.__extends) || (function () {
 
 
 
-//import { PeopleDirectory } from '../PeopleDirectory';
-// import { Pagination } from "@pnp/spfx-controls-react/lib/pagination";
-// export interface IPnPPaginationState {
-//   allItems: ISPItem[];
-//   paginatedItems: ISPItem[];
-// }
-var pageSize = 6;
+//import { Pagination } from '@pnp/spfx-controls-react';
+var pageSize = 8;
 var PeopleList = /** @class */ (function (_super) {
     __extends(PeopleList, _super);
     //[x: string]: any;
@@ -2967,11 +2962,23 @@ var PeopleList = /** @class */ (function (_super) {
     PeopleList.prototype._getPage = function (page) {
         // round a number up to the next largest integer.
         var roundupPage = Math.ceil(page);
-        console.log(page, roundupPage);
+        console.log(page, roundupPage, pageSize, this.props.people);
         this.setState({
             paginatedItems: this.props.people.slice((roundupPage - 1) * pageSize, (roundupPage * pageSize))
         });
-        console.log(this.state.paginatedItems);
+        console.log(this.props.people);
+        var arr = this.props.people;
+        function compare(a, b) {
+            if (a.name < b.name) {
+                return -1;
+            }
+            if (a.name > b.name) {
+                return 1;
+            }
+            return 0;
+        }
+        var sortedarr = arr.sort(compare);
+        console.log(sortedarr);
     };
     PeopleList.prototype.render = function () {
         var _this = this;
@@ -2992,12 +2999,11 @@ var PeopleList = /** @class */ (function (_super) {
                         "   "),
                 this.props.people.length > 0 &&
                     react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { className: 'row' },
-                        react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { className: 'applygrid' }, this.state.paginatedItems.map(function (p, i) {
+                        react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { className: 'applygrid' }, this.props.people.map(function (p, i) {
                             //const phone: string = p.phone && p.mobile ? `${p.phone}/${p.mobile}` : p.phone ? p.phone : p.mobile;
                             // const toggleClassName: string = this.state.toggleClass ? `ms-Icon--ChromeClose ${styles.isClose}` : "ms-Icon--ContactInfo";
                             return (react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { key: i, className: "persona_card" },
-                                console.log(p.photoUrl),
-                                react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_fluentui_react_lib_Persona__WEBPACK_IMPORTED_MODULE_1__["Persona"], { onClick: _this._onPersonaClicked(i, p), text: p.name, secondaryText: p.email, tertiaryText: p.mobile, imageUrl: '/_layouts/15/userphoto.aspx?size=S&accountname=' + p.email, imageAlt: p.name, size: _fluentui_react_lib_Persona__WEBPACK_IMPORTED_MODULE_1__["PersonaSize"].size72, styles: { primaryText: { fontSize: '13px', margin: '2px', fontWeight: 500 }, root: { margin: '1px' }, secondaryText: { fontSize: '10.5px', margin: '2px' }, tertiaryText: { fontSize: '12px', margin: '2px' } } }),
+                                react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_fluentui_react_lib_Persona__WEBPACK_IMPORTED_MODULE_1__["Persona"], { onClick: _this._onPersonaClicked(i, p), text: p.name, secondaryText: p.email, tertiaryText: p.mobile, imageUrl: '/_layouts/15/userphoto.aspx?size=S&accountname=' + p.email, imageAlt: p.name, size: _fluentui_react_lib_Persona__WEBPACK_IMPORTED_MODULE_1__["PersonaSize"].size72, styles: { primaryText: { fontSize: '15px', margin: '2px', fontWeight: 500 }, root: { margin: '1px' }, secondaryText: { fontSize: '11.5px', margin: '2px' }, tertiaryText: { fontSize: '12.5px', margin: '2px' } } }),
                                 react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { id: "callout".concat(i), onClick: _this._onPersonaClicked(i, p), className: "persona" },
                                     react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("i", { className: "ms-Icon ms-Icon--ContactInfo", "aria-hidden": "false" })),
                                 _this.state.showCallOut && _this.state.calloutElement === i && (react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_fluentui_react_lib_Callout__WEBPACK_IMPORTED_MODULE_4__["Callout"], { className: _this.state.showCallOut ? "calloutShow" : "callout", gapSpace: 2, target: "#callout".concat(i), isBeakVisible: false, beakWidth: 10, setInitialFocus: true, onDismiss: _this._onCalloutDismiss, directionalHint: _fluentui_react_lib_Callout__WEBPACK_IMPORTED_MODULE_4__["DirectionalHint"].leftBottomEdge, doNotLayer: false },
@@ -11144,7 +11150,7 @@ function __classPrivateFieldSet(receiver, privateMap, value) {
 
 exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/@microsoft/spfx-heft-plugins/node_modules/css-loader/dist/runtime/api.js */ "Z+AG")(false);
 // Module
-exports.push([module.i, ".Navigation{background-color:#f9f4f4}.root-67{background-color:#929090;color:#323130}.linkIsSelected-121:before{background-color:#fff;bottom:0;height:2px;left:8px;position:absolute;right:8px;transition:left 267ms cubic-bezier(.1,.25,.75,.9) 0s,right 267ms cubic-bezier(.1,.25,.75,.9) 0s}.linkIsSelected-121{outline:transparent;position:relative;-webkit-font-smoothing:antialiased;font-size:14px;font-weight:600;box-sizing:border-box;border:0;display:inline-block;text-decoration:none;text-align:center;cursor:pointer;padding:0 8px;border-radius:0;height:44px;color:#323130;background-color:transparent;line-height:44px;margin-right:8px;-webkit-user-select:none;-ms-user-select:none;user-select:none}div.ms-FocusZone.css-46.ms-Pivot.root-120{background-color:rgba(248,244,244,.947);text-decoration:none}.link-134{outline:transparent;position:relative;-webkit-font-smoothing:antialiased;font-size:15px;font-weight:400;box-sizing:border-box;border:0;display:inline-block;text-decoration:none;text-align:center;cursor:pointer;padding:0 6px;border-radius:0;height:44px;color:#323130;background-color:transparent;line-height:15px;margin-right:8px;-webkit-user-select:none;-ms-user-select:none;user-select:none}.link-134:hover{background-color:#484848}.linkIsSelected-127:before{background-color:red;bottom:0;height:2px;left:8px;position:absolute;right:8px;transition:left 267ms cubic-bezier(.1,.25,.75,.9) 0s,right 267ms cubic-bezier(.1,.25,.75,.9) 0s}.PeopleCallout li i.clipboard:hover{opacity:1;transform:translateX(1rem)}.PeopleCallout li i.clipboard,.PeopleCallout li i.clipboard:hover{transition:opacity .3s cubic-bezier(.165,.84,.44,1),transform .3s cubic-bezier(.165,.84,.44,1);will-change:opacity,transform}.PeopleCallout li i.clipboard{border:0;border-radius:100%;cursor:pointer;padding:.75rem;position:absolute}.PeopleCallout li i{display:-ms-inline-flexbox;display:inline-flex;margin-right:2rem}.link-128,.PeopleCallout li i{cursor:pointer;position:relative}.link-128{outline:transparent;-webkit-font-smoothing:antialiased;font-size:14px;font-weight:400;box-sizing:border-box;border:0;display:inline-block;text-decoration:none;text-align:center;padding:0 6.5px;border-radius:0;height:44px;color:#323130;background-color:transparent;line-height:44px;margin-right:8px;-webkit-user-select:none;-ms-user-select:none;user-select:none}.linkIsSelected-127:hover{background-color:#626161}.searchbar{margin-left:400px;margin-top:10px}", ""]);
+exports.push([module.i, ".Navigation{background-color:#f9f4f4}.root-67{background-color:#929090;color:#323130}.linkIsSelected-121:before{background-color:#fff;bottom:0;height:2px;left:8px;position:absolute;right:8px;transition:left 267ms cubic-bezier(.1,.25,.75,.9) 0s,right 267ms cubic-bezier(.1,.25,.75,.9) 0s}.linkIsSelected-121{outline:transparent;position:relative;-webkit-font-smoothing:antialiased;font-size:14px;font-weight:600;box-sizing:border-box;border:0;display:inline-block;text-decoration:none;text-align:center;cursor:pointer;padding:0 8px;border-radius:0;height:44px;color:#323130;background-color:transparent;line-height:44px;margin-right:8px;-webkit-user-select:none;-ms-user-select:none;user-select:none}div.ms-FocusZone.css-46.ms-Pivot.root-120{background-color:rgba(248,244,244,.947);text-decoration:none}.link-134{outline:transparent;position:relative;-webkit-font-smoothing:antialiased;font-size:15px;font-weight:400;box-sizing:border-box;border:0;display:inline-block;text-decoration:none;text-align:center;cursor:pointer;padding:0 6px;border-radius:0;height:44px;color:#323130;background-color:transparent;line-height:15px;margin-right:8px;-webkit-user-select:none;-ms-user-select:none;user-select:none}.link-134:hover{background-color:#484848}.linkIsSelected-127:before{background-color:red;bottom:0;height:2px;left:8px;position:absolute;right:8px;transition:left 267ms cubic-bezier(.1,.25,.75,.9) 0s,right 267ms cubic-bezier(.1,.25,.75,.9) 0s}.PeopleCallout li i.clipboard:hover{opacity:1;transform:translateX(1rem)}.PeopleCallout li i.clipboard,.PeopleCallout li i.clipboard:hover{transition:opacity .3s cubic-bezier(.165,.84,.44,1),transform .3s cubic-bezier(.165,.84,.44,1);will-change:opacity,transform}.PeopleCallout li i.clipboard{border:0;border-radius:100%;cursor:pointer;padding:.75rem;position:absolute}.PeopleCallout li i{display:-ms-inline-flexbox;display:inline-flex;margin-right:2rem}.link-128,.PeopleCallout li i{cursor:pointer;position:relative}.link-128{outline:transparent;-webkit-font-smoothing:antialiased;font-size:13px;font-weight:400;box-sizing:border-box;border:0;display:inline-block;text-decoration:none;text-align:center;padding:0 5px;border-radius:0;height:44px;color:#323130;background-color:transparent;line-height:44px;margin-right:8px;-webkit-user-select:none;-ms-user-select:none;user-select:none}.linkIsSelected-127:hover{background-color:#484747}.searchbar{margin-left:65%;margin-top:10px}.persona_card{border:1px solid #d6d5d5;box-shadow:0 0 5px 2px rgba(0,0,0,.23);transition:all .5s;cursor:pointer;padding:5px 0}", ""]);
 
 
 /***/ }),
@@ -15762,16 +15768,16 @@ __webpack_require__.r(__webpack_exports__);
 /* tslint:disable */
 __webpack_require__(/*! ./Zemployeedir.module.css */ "MEf1");
 var styles = {
-    zemployeedir: 'zemployeedir_64dc402a',
-    container: 'container_64dc402a',
-    row: 'row_64dc402a',
-    column: 'column_64dc402a',
-    'ms-Grid': 'ms-Grid_64dc402a',
-    title: 'title_64dc402a',
-    subTitle: 'subTitle_64dc402a',
-    description: 'description_64dc402a',
-    button: 'button_64dc402a',
-    label: 'label_64dc402a'
+    zemployeedir: 'zemployeedir_8419d28e',
+    container: 'container_8419d28e',
+    row: 'row_8419d28e',
+    column: 'column_8419d28e',
+    'ms-Grid': 'ms-Grid_8419d28e',
+    title: 'title_8419d28e',
+    subTitle: 'subTitle_8419d28e',
+    description: 'description_8419d28e',
+    button: 'button_8419d28e',
+    label: 'label_8419d28e'
 };
 /* harmony default export */ __webpack_exports__["default"] = (styles);
 /* tslint:enable */ 
@@ -15905,7 +15911,7 @@ function _getCallbacks() {
 
 exports = module.exports = __webpack_require__(/*! ../../../../node_modules/@microsoft/spfx-heft-plugins/node_modules/css-loader/dist/runtime/api.js */ "Z+AG")(false);
 // Module
-exports.push([module.i, ".zemployeedir_64dc402a .container_64dc402a{max-width:200px;margin:0 auto;color:red}.zemployeedir_64dc402a .row_64dc402a{margin:0 -8px;box-sizing:border-box;zoom:1;color:#fff;background-color:red;padding:20px}.zemployeedir_64dc402a .row_64dc402a:after,.zemployeedir_64dc402a .row_64dc402a:before{display:table;content:\"\";line-height:0}.zemployeedir_64dc402a .row_64dc402a:after{clear:both}.zemployeedir_64dc402a .column_64dc402a{position:relative;min-height:1px;padding-left:8px;padding-right:8px;box-sizing:border-box}[dir=ltr] .zemployeedir_64dc402a .column_64dc402a{float:left}[dir=rtl] .zemployeedir_64dc402a .column_64dc402a{float:right}.zemployeedir_64dc402a .column_64dc402a .ms-Grid_64dc402a{padding:0}@media (min-width:640px){.zemployeedir_64dc402a .column_64dc402a{width:83.3333333333%}}@media (min-width:1024px){.zemployeedir_64dc402a .column_64dc402a{width:66.6666666667%}}@media (min-width:1024px){[dir=ltr] .zemployeedir_64dc402a .column_64dc402a{left:16.6666666667%}[dir=rtl] .zemployeedir_64dc402a .column_64dc402a{right:16.6666666667%}}@media (min-width:640px){[dir=ltr] .zemployeedir_64dc402a .column_64dc402a{left:8.3333333333%}[dir=rtl] .zemployeedir_64dc402a .column_64dc402a{right:8.3333333333%}}.zemployeedir_64dc402a .title_64dc402a{font-size:21px;font-weight:100;color:#fff}.zemployeedir_64dc402a .description_64dc402a,.zemployeedir_64dc402a .subTitle_64dc402a{font-size:17px;font-weight:300;color:#fff}.zemployeedir_64dc402a .button_64dc402a{text-decoration:none;height:32px;min-width:80px;background-color:#0078d4;border-color:#0078d4;color:#fff;outline:transparent;position:relative;font-family:Segoe UI WestEuropean,Segoe UI,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;-webkit-font-smoothing:antialiased;font-size:14px;font-weight:400;border-width:0;text-align:center;cursor:pointer;display:inline-block;padding:0 16px}.zemployeedir_64dc402a .button_64dc402a .label_64dc402a{font-weight:600;font-size:14px;height:32px;line-height:32px;margin:0 4px;vertical-align:top;display:inline-block}", ""]);
+exports.push([module.i, ".zemployeedir_8419d28e .container_8419d28e{max-width:200px;margin:0 auto;box-shadow:0 2px 4px 0 rgba(0,0,0,.2),0 25px 50px 0 rgba(0,0,0,.1);color:red}.zemployeedir_8419d28e .row_8419d28e{margin:0 -8px;box-sizing:border-box;zoom:1;color:#fff;background-color:red;padding:20px}.zemployeedir_8419d28e .row_8419d28e:after,.zemployeedir_8419d28e .row_8419d28e:before{display:table;content:\"\";line-height:0}.zemployeedir_8419d28e .row_8419d28e:after{clear:both}.zemployeedir_8419d28e .column_8419d28e{position:relative;min-height:1px;padding-left:8px;padding-right:8px;box-sizing:border-box}[dir=ltr] .zemployeedir_8419d28e .column_8419d28e{float:left}[dir=rtl] .zemployeedir_8419d28e .column_8419d28e{float:right}.zemployeedir_8419d28e .column_8419d28e .ms-Grid_8419d28e{padding:0}@media (min-width:640px){.zemployeedir_8419d28e .column_8419d28e{width:83.3333333333%}}@media (min-width:1024px){.zemployeedir_8419d28e .column_8419d28e{width:66.6666666667%}}@media (min-width:1024px){[dir=ltr] .zemployeedir_8419d28e .column_8419d28e{left:16.6666666667%}[dir=rtl] .zemployeedir_8419d28e .column_8419d28e{right:16.6666666667%}}@media (min-width:640px){[dir=ltr] .zemployeedir_8419d28e .column_8419d28e{left:8.3333333333%}[dir=rtl] .zemployeedir_8419d28e .column_8419d28e{right:8.3333333333%}}.zemployeedir_8419d28e .title_8419d28e{font-size:21px;font-weight:100;color:#fff}.zemployeedir_8419d28e .description_8419d28e,.zemployeedir_8419d28e .subTitle_8419d28e{font-size:17px;font-weight:300;color:#fff}.zemployeedir_8419d28e .button_8419d28e{text-decoration:none;height:32px;min-width:80px;background-color:#0078d4;border-color:#0078d4;color:#fff;outline:transparent;position:relative;font-family:Segoe UI WestEuropean,Segoe UI,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;-webkit-font-smoothing:antialiased;font-size:14px;font-weight:400;border-width:0;text-align:center;cursor:pointer;display:inline-block;padding:0 16px}.zemployeedir_8419d28e .button_8419d28e .label_8419d28e{font-weight:600;font-size:14px;height:32px;line-height:32px;margin:0 4px;vertical-align:top;display:inline-block}", ""]);
 
 
 /***/ }),
@@ -19420,9 +19426,10 @@ var Search = /** @class */ (function (_super) {
         return _this;
     }
     Search.prototype.render = function () {
+        var _this = this;
         return (react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", null,
             react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { className: 'search' },
-                react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_fluentui_react_lib_SearchBox__WEBPACK_IMPORTED_MODULE_2__["SearchBox"], { placeholder: ZemployeedirWebPartStrings__WEBPACK_IMPORTED_MODULE_3__["SearchBoxPlaceholder"], onSearch: this._handleSearch, onClear: this._handleClear, value: this.props.searchQuery, styles: searchBoxStyles, className: 'searchBox' }))));
+                react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_fluentui_react_lib_SearchBox__WEBPACK_IMPORTED_MODULE_2__["SearchBox"], { placeholder: ZemployeedirWebPartStrings__WEBPACK_IMPORTED_MODULE_3__["SearchBoxPlaceholder"], onChange: function (_, newValue) { return _this._handleSearch; }, onSearch: this._handleSearch, onClear: this._handleClear, value: this.props.searchQuery, styles: searchBoxStyles, className: 'searchBox' }))));
     };
     return Search;
 }(react__WEBPACK_IMPORTED_MODULE_0__["Component"]));
@@ -19768,10 +19775,10 @@ var Zemployeedir = /** @class */ (function (_super) {
         if (searchQuery === null && index === 'ALL') {
             console.log(index, searchQuery);
             // requiredUrl="/_api/web/lists/getbytitle('EmpDirectory')/Items?$select=firstName,LastName,PreferredName,WorkEmail,PictureURL,PhoneNumber,MobileNumber,JobTitle,Department,Skills,PastProjects";
-            requiredUrl = "/_api/web/lists/getbytitle('EmployeeDetails')/Items?$select=Name/FirstName,Name/LastName,Name/EMail,Name/Department,MobileNumber,JobTitle,DateofJoining&$expand=Name";
+            requiredUrl = "/_api/web/lists/getbytitle('EmployeeDetails')/Items?$select=EmpName/FirstName,EmpName/LastName,EmpName/EMail,EmpName/Department,Contactno,DateofJoining,JobTitle&$expand=EmpName";
         }
         else {
-            requiredUrl = "/_api/web/lists/getbytitle('EmployeeDetails')/Items?$select=Name/FirstName,Name/LastName,Name/EMail,Name/Department,MobileNumber,JobTitle,DateofJoining&$expand=Name&$filter=startswith(Name/FirstName,'" + query + "')";
+            requiredUrl = "/_api/web/lists/getbytitle('EmployeeDetails')/Items?$select=EmpName/FirstName,EmpName/LastName,EmpName/EMail,EmpName/Department,Contactno,DateofJoining,JobTitle&$expand=EmpName&$filter=startswith(EmpName/FirstName,'" + query + "')";
         }
         console.log(this.props.webUrl + requiredUrl);
         this.props.spHttpClient
@@ -19809,11 +19816,11 @@ var Zemployeedir = /** @class */ (function (_super) {
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
             var people = (_a = res.value) === null || _a === void 0 ? void 0 : _a.map(function (x) {
                 return {
-                    name: x.Name.FirstName + x.Name.LastName,
-                    mobile: x.MobileNumber,
-                    email: x.Name.EMail,
+                    name: x.EmpName.FirstName + ' ' + x.EmpName.LastName,
+                    mobile: x.Contactno,
+                    email: x.EmpName.EMail,
                     function: x.JobTitle,
-                    department: x.Name.Department,
+                    department: x.EmpName.Department,
                     DOJ: x.DateofJoining
                 };
             });
@@ -19872,7 +19879,9 @@ var Zemployeedir = /** @class */ (function (_super) {
     Zemployeedir.prototype.componentDidMount = function () {
         // load information about people after the component has been
         // initiated on the page
+        console.log(this.state.selectedIndex);
         this._loadPeopleInfo(this.state.selectedIndex, null);
+        console.log(this.state.people);
     };
     Zemployeedir.prototype.render = function () {
         var _a = this.state, loading = _a.loading, errorMessage = _a.errorMessage, selectedIndex = _a.selectedIndex, searchQuery = _a.searchQuery, people = _a.people;
@@ -20171,7 +20180,7 @@ var EventGroup = /** @class */ (function () {
 
 exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/@microsoft/spfx-heft-plugins/node_modules/css-loader/dist/runtime/api.js */ "Z+AG")(false);
 // Module
-exports.push([module.i, ".search{display:-ms-flexbox;display:flex;-ms-flex-direction:row;flex-direction:row;-ms-flex-align:start;align-items:flex-start}.search .searchBox{width:450px;border-radius:10px;border:2px solid balck;margin:2px}", ""]);
+exports.push([module.i, ".search{display:-ms-flexbox;display:flex;-ms-flex-direction:row;flex-direction:row;-ms-flex-align:start;align-items:flex-start}.search .searchBox{width:100%;border-radius:10px;border:2px solid balck;margin:2px}", ""]);
 
 
 /***/ }),
@@ -26556,6 +26565,10 @@ var PeopleCallout = /** @class */ (function (_super) {
                     react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("li", null,
                         "Department:",
                         this.props.person.department),
+                this.props.person.department &&
+                    react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("li", null,
+                        "Date Of Joining:",
+                        this.props.person.DOJ),
                 this.props.person.email &&
                     react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("li", { id: "personcopyemail" },
                         react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("i", { className: "ms-Icon ms-Icon--Mail icon", "aria-hidden": "true" }),
@@ -31695,7 +31708,7 @@ function getPersonaInitialsColor(props) {
 
 exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/@microsoft/spfx-heft-plugins/node_modules/css-loader/dist/runtime/api.js */ "Z+AG")(false);
 // Module
-exports.push([module.i, ".persona_card{border:1px solid rgba(254,245,245,.393);box-shadow:0 54px 55px rgba(50,50,50,.2),0 -12px 30px rgba(71,70,70,.11),0 4px 6px rgba(70,69,69,.11),0 12px 13px rgba(92,92,92,.15),0 -3px 5px rgba(91,90,90,.08)}.applygrid{display:grid;grid-template-columns:repeat(3,minmax(200px,1fr));grid-gap:10px;-ms-flex-align:stretch;align-items:stretch;font-family:Arial,Helvetica,sans-serif;font-size:30px;font-weight:700;margin-top:10px}.root-139{font-family:Segoe UI,\"Segoe UI Web (West European)\",-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;-webkit-font-smoothing:antialiased;font-size:14px;font-weight:400;margin:1px;padding:0;box-sizing:border-box;color:#323130;position:relative;height:100px;min-width:52px;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center}", ""]);
+exports.push([module.i, ".applygrid{display:grid;grid-template-columns:24% 24% 24% 24%;grid-gap:10px;-ms-flex-align:stretch;align-items:stretch;font-family:Arial,Helvetica,sans-serif;font-size:30px;font-weight:700;margin-top:10px;padding:0 5px;overflow:auto}.root-139{font-family:Segoe UI,\"Segoe UI Web (West European)\",-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;-webkit-font-smoothing:antialiased;font-size:14px;font-weight:400;margin:1px;padding:0;box-sizing:border-box;color:#323130;position:relative;height:100px;min-width:52px;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center}.peopleDirectory{background-color:#fff}.row{width:100%}", ""]);
 
 
 /***/ }),

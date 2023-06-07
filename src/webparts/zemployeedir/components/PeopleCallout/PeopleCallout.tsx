@@ -24,6 +24,9 @@ export class PeopleCallout extends React.Component<IPeopleCalloutProps, IPeopleC
           {this.props.person.department &&
             <li>Department:{this.props.person.department}</li>
           }
+          {this.props.person.department &&
+            <li>Date Of Joining:{this.props.person.DOJ}</li>
+          }
           {this.props.person.email &&
             <li id="personcopyemail">
               <i className="ms-Icon ms-Icon--Mail icon" aria-hidden="true"/>
