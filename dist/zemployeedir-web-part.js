@@ -3004,8 +3004,7 @@ var PeopleList = /** @class */ (function (_super) {
                             // const toggleClassName: string = this.state.toggleClass ? `ms-Icon--ChromeClose ${styles.isClose}` : "ms-Icon--ContactInfo";
                             return (react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { key: i, className: "persona_card" },
                                 react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_fluentui_react_lib_Persona__WEBPACK_IMPORTED_MODULE_1__["Persona"], { onClick: _this._onPersonaClicked(i, p), text: p.name, secondaryText: p.email, tertiaryText: p.mobile, imageUrl: '/_layouts/15/userphoto.aspx?size=S&accountname=' + p.email, imageAlt: p.name, size: _fluentui_react_lib_Persona__WEBPACK_IMPORTED_MODULE_1__["PersonaSize"].size72, styles: { primaryText: { fontSize: '15px', margin: '2px', fontWeight: 500 }, root: { margin: '1px' }, secondaryText: { fontSize: '11.5px', margin: '2px' }, tertiaryText: { fontSize: '12.5px', margin: '2px' } } }),
-                                react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { id: "callout".concat(i), onClick: _this._onPersonaClicked(i, p), className: "persona" },
-                                    react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("i", { className: "ms-Icon ms-Icon--ContactInfo", "aria-hidden": "false" })),
+                                react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { id: "callout".concat(i), onClick: _this._onPersonaClicked(i, p), className: "persona" }),
                                 _this.state.showCallOut && _this.state.calloutElement === i && (react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_fluentui_react_lib_Callout__WEBPACK_IMPORTED_MODULE_4__["Callout"], { className: _this.state.showCallOut ? "calloutShow" : "callout", gapSpace: 2, target: "#callout".concat(i), isBeakVisible: false, beakWidth: 10, setInitialFocus: true, onDismiss: _this._onCalloutDismiss, directionalHint: _fluentui_react_lib_Callout__WEBPACK_IMPORTED_MODULE_4__["DirectionalHint"].leftBottomEdge, doNotLayer: false },
                                     react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_PeopleCallout__WEBPACK_IMPORTED_MODULE_5__["PeopleCallout"], { person: _this.state.person })))));
                         }))))));
@@ -11150,7 +11149,7 @@ function __classPrivateFieldSet(receiver, privateMap, value) {
 
 exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/@microsoft/spfx-heft-plugins/node_modules/css-loader/dist/runtime/api.js */ "Z+AG")(false);
 // Module
-exports.push([module.i, ".Navigation{background-color:#f9f4f4}.root-67{background-color:#929090;color:#323130}.linkIsSelected-121:before{background-color:#fff;bottom:0;height:2px;left:8px;position:absolute;right:8px;transition:left 267ms cubic-bezier(.1,.25,.75,.9) 0s,right 267ms cubic-bezier(.1,.25,.75,.9) 0s}.linkIsSelected-121{outline:transparent;position:relative;-webkit-font-smoothing:antialiased;font-size:14px;font-weight:600;box-sizing:border-box;border:0;display:inline-block;text-decoration:none;text-align:center;cursor:pointer;padding:0 8px;border-radius:0;height:44px;color:#323130;background-color:transparent;line-height:44px;margin-right:8px;-webkit-user-select:none;-ms-user-select:none;user-select:none}div.ms-FocusZone.css-46.ms-Pivot.root-120{background-color:rgba(248,244,244,.947);text-decoration:none}.link-134{outline:transparent;position:relative;-webkit-font-smoothing:antialiased;font-size:15px;font-weight:400;box-sizing:border-box;border:0;display:inline-block;text-decoration:none;text-align:center;cursor:pointer;padding:0 6px;border-radius:0;height:44px;color:#323130;background-color:transparent;line-height:15px;margin-right:8px;-webkit-user-select:none;-ms-user-select:none;user-select:none}.link-134:hover{background-color:#484848}.linkIsSelected-127:before{background-color:red;bottom:0;height:2px;left:8px;position:absolute;right:8px;transition:left 267ms cubic-bezier(.1,.25,.75,.9) 0s,right 267ms cubic-bezier(.1,.25,.75,.9) 0s}.PeopleCallout li i.clipboard:hover{opacity:1;transform:translateX(1rem)}.PeopleCallout li i.clipboard,.PeopleCallout li i.clipboard:hover{transition:opacity .3s cubic-bezier(.165,.84,.44,1),transform .3s cubic-bezier(.165,.84,.44,1);will-change:opacity,transform}.PeopleCallout li i.clipboard{border:0;border-radius:100%;cursor:pointer;padding:.75rem;position:absolute}.PeopleCallout li i{display:-ms-inline-flexbox;display:inline-flex;margin-right:2rem}.link-128,.PeopleCallout li i{cursor:pointer;position:relative}.link-128{outline:transparent;-webkit-font-smoothing:antialiased;font-size:13px;font-weight:400;box-sizing:border-box;border:0;display:inline-block;text-decoration:none;text-align:center;padding:0 5px;border-radius:0;height:44px;color:#323130;background-color:transparent;line-height:44px;margin-right:8px;-webkit-user-select:none;-ms-user-select:none;user-select:none}.linkIsSelected-127:hover{background-color:#484747}.searchbar{margin-left:65%;margin-top:10px}.persona_card{border:1px solid #d6d5d5;box-shadow:0 0 5px 2px rgba(0,0,0,.23);transition:all .5s;cursor:pointer;padding:5px 0}", ""]);
+exports.push([module.i, ".Navigation{background-color:#f9f4f4}.root-67{background-color:#929090;color:#323130}.linkIsSelected-121:before{background-color:#fff;bottom:0;height:2px;left:8px;position:absolute;right:8px;transition:left 267ms cubic-bezier(.1,.25,.75,.9) 0s,right 267ms cubic-bezier(.1,.25,.75,.9) 0s}.linkIsSelected-121{outline:transparent;position:relative;-webkit-font-smoothing:antialiased;font-size:14px;font-weight:600;box-sizing:border-box;border:0;display:inline-block;text-decoration:none;text-align:center;cursor:pointer;padding:0 8px;border-radius:0;height:44px;color:#323130;background-color:transparent;line-height:44px;margin-right:8px;-webkit-user-select:none;-ms-user-select:none;user-select:none}div.ms-FocusZone.css-46.ms-Pivot.root-120{background-color:rgba(248,244,244,.947);text-decoration:none}.link-134{outline:transparent;position:relative;-webkit-font-smoothing:antialiased;font-size:15px;font-weight:400;box-sizing:border-box;border:0;display:inline-block;text-decoration:none;text-align:center;cursor:pointer;padding:0 6px;border-radius:0;height:44px;color:#323130;background-color:transparent;line-height:15px;margin-right:8px;-webkit-user-select:none;-ms-user-select:none;user-select:none}.link-134:hover{background-color:#484848}.linkIsSelected-127:before{background-color:red;bottom:0;height:2px;left:8px;position:absolute;right:8px;transition:left 267ms cubic-bezier(.1,.25,.75,.9) 0s,right 267ms cubic-bezier(.1,.25,.75,.9) 0s}.PeopleCallout li i.clipboard:hover{opacity:1;transform:translateX(1rem)}.PeopleCallout li i.clipboard,.PeopleCallout li i.clipboard:hover{transition:opacity .3s cubic-bezier(.165,.84,.44,1),transform .3s cubic-bezier(.165,.84,.44,1);will-change:opacity,transform}.PeopleCallout li i.clipboard{border:0;border-radius:100%;cursor:pointer;padding:.75rem;position:absolute}.PeopleCallout li i{display:-ms-inline-flexbox;display:inline-flex;margin-right:2rem}.link-128,.PeopleCallout li i{cursor:pointer;position:relative}.link-128{outline:transparent;-webkit-font-smoothing:antialiased;font-size:13px;font-weight:400;box-sizing:border-box;border:0;display:inline-block;text-decoration:none;text-align:center;padding:0 5px;border-radius:0;height:44px;color:#323130;background-color:transparent;line-height:44px;margin-right:8px;-webkit-user-select:none;-ms-user-select:none;user-select:none}.linkIsSelected-127:hover{background-color:#484747}.searchbar{margin-left:65%;margin-top:10px}.persona_card{border:1px solid #d6d5d5;box-shadow:0 0 5px 2px rgba(0,0,0,.23);transition:all .5s;cursor:pointer;padding:5px 0;width:225px;margin:5px}", ""]);
 
 
 /***/ }),
@@ -19717,13 +19716,26 @@ var Zemployeedir = /** @class */ (function (_super) {
         _this._handleSearch = function (searchQuery) {
             // activate the Search tab in the navigation and set the
             // specified text as the current search query
-            _this.setState({
-                selectedIndex: 'Search',
-                searchQuery: searchQuery
-            }, function () {
-                // load information about people matching the specified search query
-                this._loadPeopleInfo(null, searchQuery);
-            });
+            console.log(searchQuery);
+            if (searchQuery === "") {
+                console.log('IT IS WORKING');
+                _this.setState({
+                    selectedIndex: 'ALL',
+                    searchQuery: ''
+                }, function () {
+                    // load information about people   ALL
+                    this._loadPeopleInfo('ALL', null);
+                });
+            }
+            else {
+                _this.setState({
+                    selectedIndex: 'Search',
+                    searchQuery: searchQuery
+                }, function () {
+                    // load information about people matching the specified search query
+                    this._loadPeopleInfo(null, searchQuery);
+                });
+            }
         };
         _this._handleSearchClear = function () {
             // activate the A tab in the navigation and clear the previous search query
@@ -31708,7 +31720,7 @@ function getPersonaInitialsColor(props) {
 
 exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/@microsoft/spfx-heft-plugins/node_modules/css-loader/dist/runtime/api.js */ "Z+AG")(false);
 // Module
-exports.push([module.i, ".applygrid{display:grid;grid-template-columns:24% 24% 24% 24%;grid-gap:10px;-ms-flex-align:stretch;align-items:stretch;font-family:Arial,Helvetica,sans-serif;font-size:30px;font-weight:700;margin-top:10px;padding:0 5px;overflow:auto}.root-139{font-family:Segoe UI,\"Segoe UI Web (West European)\",-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;-webkit-font-smoothing:antialiased;font-size:14px;font-weight:400;margin:1px;padding:0;box-sizing:border-box;color:#323130;position:relative;height:100px;min-width:52px;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center}.peopleDirectory{background-color:#fff}.row{width:100%}", ""]);
+exports.push([module.i, ".applygrid{font-family:Arial,Helvetica,sans-serif;font-size:30px;font-weight:700;margin-top:10px;padding:0 5px;-ms-flex-wrap:wrap;flex-wrap:wrap;-ms-flex-pack:start;justify-content:flex-start}.applygrid,.root-139{display:-ms-flexbox;display:flex}.root-139{font-family:Segoe UI,\"Segoe UI Web (West European)\",-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;-webkit-font-smoothing:antialiased;font-size:14px;font-weight:400;margin:1px;padding:0;box-sizing:border-box;color:#323130;position:relative;height:100px;min-width:52px;-ms-flex-align:center;align-items:center}.peopleDirectory{background-color:#fff}.row{width:100%}", ""]);
 
 
 /***/ }),

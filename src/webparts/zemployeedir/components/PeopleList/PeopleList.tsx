@@ -102,7 +102,7 @@ export class PeopleList extends React.Component<IPeopleListProps, IPeopleListSta
                      />
                     <div id={`callout${i}`} onClick={this._onPersonaClicked(i, p)} className="persona" >
                     
-                      <i className="ms-Icon ms-Icon--ContactInfo" aria-hidden="false"/>
+                     
                     </div>
                     {this.state.showCallOut && this.state.calloutElement === i && (
                       <Callout

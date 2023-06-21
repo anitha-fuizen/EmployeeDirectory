@@ -54,17 +54,33 @@ export class Zemployeedir extends React.Component<IZemployeedirProps, IZemployee
   }
 
   private _handleSearch = (searchQuery: string): void => {
+    
     // activate the Search tab in the navigation and set the
     // specified text as the current search query
+    console.log(searchQuery);
+    
+    if(searchQuery===""){
+      console.log('IT IS WORKING');
+      this.setState({
+        selectedIndex: 'ALL',
+        searchQuery: ''
+      },
+        function () {
+          // load information about people   ALL
+          this._loadPeopleInfo('ALL', null);
+        });
+      
+    }else{
     this.setState({
       selectedIndex: 'Search',
       searchQuery: searchQuery
+     
     },
       function () {
         // load information about people matching the specified search query
         this._loadPeopleInfo(null, searchQuery);
       });
-
+    }
   }
 
   private _handleSearchClear = (): void => {
@@ -196,6 +212,7 @@ console.log(this.state.searchQuery);
           // People collection could be reduced to zero, so no results
           this.setState({
             loading: false
+            
           });
           return;
         }

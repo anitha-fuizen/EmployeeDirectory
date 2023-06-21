@@ -2,18 +2,21 @@
 
 .applygrid{
   
-  display: grid;
+  //display: grid;
   // grid-template-columns: repeat(4, minmax(200px, 1fr));
-  grid-template-columns:24% 24% 24% 24%;
-  grid-gap:10px;
-  align-items: stretch;
+  //grid-template-columns:23% 23% 23% 23%;
+  //grid-gap:10px;
+  //align-items: stretch;
   font-family: Arial, Helvetica, sans-serif;
   font-size:30px;
   font-weight: bold;
   // background-color:white;
   margin-top:10px;
   padding: 0 5px;
-  overflow: auto;
+  //overflow: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
   
 }
 .root-139 {
